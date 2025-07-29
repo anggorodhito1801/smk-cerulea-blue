@@ -42,3 +42,7 @@ Route::post('kelas', [KelasController::class, 'store'])->name('kelas.store');
 Route::get('kelas/{id_kelas}/edit', [KelasController::class, 'edit'])->name('kelas.edit');
 Route::put('kelas/{id_kelas}', [KelasController::class, 'update'])->name('kelas.update');
 Route::delete('kelas/{id_kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+
+Route::get('/react', function () {
+    return view('react');
+});

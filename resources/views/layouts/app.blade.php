@@ -8,6 +8,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div class="container">
+            <div id="root"></div> @vite(['resources/js/app.jsx'])
             <a class="navbar-brand" href="{{ url('/') }}">SMK Cerulean Blue</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">

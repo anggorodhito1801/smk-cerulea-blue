@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div id="root"></div> @vite(['resources/js/app.jsx'])
     <h3>Tambah Data Siswa</h3>
 
     <form action="{{ route('siswa.store') }}" method="POST">

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div id="root"></div> @vite(['resources/js/app.jsx'])
     <h4>Tambah Guru</h4>
     <form action="{{ route('guru.store') }}" method="POST">
         @csrf

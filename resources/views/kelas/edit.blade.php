@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div id="root"></div> @vite(['resources/js/app.jsx'])
     <h4>Edit Data Kelas</h4>
     <form action="{{ route('kelas.update', $kelas->id_kelas) }}" method="POST">
         @csrf

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div id="root"></div> @vite(['resources/js/app.jsx'])
     <h4>Edit Guru</h4>
     <form action="{{ route('guru.update', $guru->id_guru) }}" method="POST">
         @csrf @method('PUT')

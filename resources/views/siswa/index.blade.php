@@ -1,10 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <div id="root"></div> @vite(['resources/js/app.jsx'])
+
     <h3>Data Siswa</h3>
 
     <form action="{{ route('siswa.index') }}" method="GET" class="mb-3">
         <div class="row">
+
             <div class="col-md-4">
                 <select name="kelas" class="form-control" onchange="this.form.submit()">
                     <option value="">-- Filter Berdasarkan Kelas --</option>

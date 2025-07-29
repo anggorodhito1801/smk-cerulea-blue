@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Siswa;
 
+Route::get('/siswa', function () {
+    return Siswa::all();
+});
 
 /*
 |--------------------------------------------------------------------------

@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="text-center">
-    <img src="{{ asset('img/logo-sekolah.png') }}" alt="Logo Sekolah" width="100">
+    <div id="root"></div>
+@vite(['resources/js/app.jsx'])
+
+    <img src="{{ asset('img/logo_sekolah.jpg') }}" alt="Logo Sekolah" width="100">
     <h1 class="mt-3">Selamat Datang di Sistem SMK Cerulean Blue</h1>
     <p id="greeting" class="lead text-secondary mt-1"></p>
 
