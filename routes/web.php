@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthUserController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\UserCustomController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +51,26 @@ Route::delete('kelas/{id_kelas}', [KelasController::class, 'destroy'])->name('ke
 Route::get('/react', function () {
     return view('react');
 });
+
+Route::resource('/user', UserController::class);
+Route::resource('user', UserController::class);
+Route::resource('user', UserCustomController::class);
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginProcess']);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware(['web'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::resource('siswa', SiswaController::class);
+    Route::resource('guru', GuruController::class);
+    Route::resource('kelas', KelasController::class);
+    Route::resource('user', UserCustomController::class);
+});
+
+Route::get('/dashboard', function () {
+    if (!Session::has('username')) return redirect()->route('login');
+    return view('dashboard');
+})->name('dashboard');

@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 <div class="container">
-    <div id="root"></div> @vite(['resources/js/app.jsx'])
+    
     <h4>Tambah Kelas</h4>
     <form action="{{ route('kelas.store') }}" method="POST">
         @csrf

@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 <div class="container">
-    <div id="root"></div> @vite(['resources/js/app.jsx'])
-
     <h3>Data Siswa</h3>
 
     <form action="{{ route('siswa.index') }}" method="GET" class="mb-3">

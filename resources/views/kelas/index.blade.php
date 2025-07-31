@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 <div class="container">
-    <div id="root"></div> @vite(['resources/js/app.jsx'])
+    
     <h4>Data Kelas</h4>
     <a href="{{ route('kelas.create') }}" class="btn btn-primary mb-3">Tambah Kelas</a>
 

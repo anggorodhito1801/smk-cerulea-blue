@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK Cerulean Blue</title>
-    @vite(['resources/js/app.jsx'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -27,14 +26,25 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <div id="root"></div> @vite(['resources/js/app.jsx'])
             <a class="navbar-brand" href="/">SMK Cerulean Blue</a>
             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/siswa">Siswa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/guru">Guru</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/kelas">Kelas</a></li>
-                </ul>
+<ul class="navbar-nav ms-auto align-items-center">
+    <li class="nav-item"><a class="nav-link" href="/siswa">Siswa</a></li>
+    <li class="nav-item"><a class="nav-link" href="/guru">Guru</a></li>
+    <li class="nav-item"><a class="nav-link" href="/kelas">Kelas</a></li>
+    <li class="nav-item"><a class="nav-link" href="/user">User</a></li>
+
+    @if(Session::has('login'))
+        <li class="nav-item">
+            <span class="navbar-text text-success me-3">
+                Selamat {{ now()->format('H') < 12 ? 'Pagi' : (now()->format('H') < 17 ? 'Siang' : 'Sore') }}, <strong>{{ Session::get('name') }}</strong>
+            </span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-danger" href="{{ route('logout') }}">Logout</a>
+        </li>
+    @endif
+</ul>
             </div>
         </div>
     </nav>
